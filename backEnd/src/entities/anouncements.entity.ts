@@ -49,6 +49,9 @@ export class Anouncement {
 	@Column({ type: "text" })
 	coverImage: string;
 
+	/* @Column({ default: true })
+	isActive: boolean; */
+
 	@OneToMany(() => E.Image, (image) => image.anouncement, { cascade: true })
 	images: E.Image[] | undefined | null;
 

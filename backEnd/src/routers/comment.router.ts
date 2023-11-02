@@ -15,7 +15,6 @@ commentRouter.post(
 
 commentRouter.get(
 	"/:announcementId",
-	M.verifyToken,
 	M.verifyAnouncementIdExists,
 	C.readAllCommentsController
 );
