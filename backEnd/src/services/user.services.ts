@@ -2,7 +2,6 @@ import * as S from "../schemas";
 import * as I from "../interfaces";
 import * as E from "../entities";
 import { userRepository, addressRepository } from "../repositories";
-import { AppError } from "../error";
 
 export const createUserService = async (
 	payload: I.TUserCreateRequest
@@ -12,7 +11,20 @@ export const createUserService = async (
 	const addressCreate: E.Address = addressRepository.create(address);
 	await addressRepository.save(addressCreate);
 
-	const colors = ["#E34D8C", "#C04277", "#7D2A4D"];
+	const colors = [
+		"random-0",
+		"random-1",
+		"random-2",
+		"random-3",
+		"random-4",
+		"random-5",
+		"random-6",
+		"random-7",
+		"random-8",
+		"random-9",
+		"random-10",
+		"random-11",
+	];
 
 	const randonPosition = Math.floor(Math.random() * colors.length);
 	console.log(randonPosition);

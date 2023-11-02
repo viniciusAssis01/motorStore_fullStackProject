@@ -26,7 +26,7 @@ export const readAnnouncementIdController = async (
 	res: Response
 ): Promise<Response> => {
 	const announcementId = req.params.announcementId;
-	const announcement /* : I.TImageAndAnouncementResponse */ =
+	const announcement: I.TAnnouncementAndUserResponse =
 		await S.readAnnouncementIdService(announcementId);
 
 	return res.status(200).json(announcement);
@@ -47,11 +47,8 @@ export const updateAnnouncementController = async (
 ): Promise<Response> => {
 	const announcementId: string = req.params.announcementId;
 	const userId: string = res.locals.decoded.sub;
-	const updateAnnouncement = await S.updateAnnouncementAndImageService(
-		announcementId,
-		userId,
-		req.body
-	);
+	const updateAnnouncement: I.TImageAndAnouncementResponse =
+		await S.updateAnnouncementAndImageService(announcementId, userId, req.body);
 	return res.status(200).json(updateAnnouncement);
 };
 

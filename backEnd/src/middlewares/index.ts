@@ -5,8 +5,10 @@ import { verifyCpfUserExists } from "./validateCpfUserExists.middleware";
 import { verifyEmailUserExists } from "./validateEmailUserExists.middleware";
 import { validateUuid } from "./validatedUuid.middleware";
 import { verifyAnouncementIdExists } from "./verifyAnouncementIdExists.middleware";
+import { verifyCommentsId } from "./verifyCommentIdExist.middleware";
 import { verifyToken } from "./verifyToken.middleware";
 import { verifyUserIdExists } from "./verifyUserIdExists.middleware";
+
 export {
 	handleError,
 	validateBody,
@@ -17,4 +19,5 @@ export {
 	verifyUserIdExists,
 	verifyAnouncementIdExists,
 	validateUuid,
+	verifyCommentsId,
 };

@@ -47,8 +47,9 @@ export const updateComment = async (
 	userId: string,
 	reqBody: I.TCommentUpdateRequestDep
 ): Promise<I.TCommentResponse> => {
-	const foundcoment = await commentRepository.findOneBy({
-		id: commentId,
+	const foundcoment = await commentRepository.findOne({
+		where: { id: commentId },
+		relations: { user: true },
 	});
 	if (!foundcoment) throw new AppError("Comment not found", 404);
 

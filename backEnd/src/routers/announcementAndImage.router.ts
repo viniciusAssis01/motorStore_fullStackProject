@@ -14,7 +14,11 @@ anouncementRouter.post(
 
 anouncementRouter.get("", C.readAllAnnouncementController);
 
-anouncementRouter.get("/:announcementId", C.readAnnouncementIdController);
+anouncementRouter.get(
+	"/:announcementId",
+	M.verifyAnouncementIdExists,
+	C.readAnnouncementIdController
+);
 
 anouncementRouter.get(
 	"/user/:userId",

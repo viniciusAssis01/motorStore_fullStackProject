@@ -65,7 +65,9 @@ export const userAds = async (
 	return S.userReadIdResponse.parse(user);
 };
 
-export const readAnnouncementIdService = async (anouncementId: string) => {
+export const readAnnouncementIdService = async (
+	anouncementId: string
+): Promise<I.TAnnouncementAndUserResponse> => {
 	const announcementAndUser = await anouncementRepository.findOne({
 		where: { id: anouncementId },
 		relations: { user: { address: true }, images: true },
@@ -77,7 +79,7 @@ export const updateAnnouncementAndImageService = async (
 	anouncementId: string,
 	userId: string,
 	payloadReqBody: I.TImageAndAnouncementCreateRequest
-) => {
+): Promise<I.TImageAndAnouncementResponse> => {
 	const { images, ...anouncementBody } = payloadReqBody;
 
 	const foundAnouncement = await anouncementRepository.findOne({

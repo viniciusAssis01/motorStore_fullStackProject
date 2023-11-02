@@ -15,6 +15,8 @@ export const commentSchemaResponse = z.object({
 
 export const commentSchemaRequest = commentSchemaResponse.omit({
 	id: true,
+	createdAt: true,
+	user: true,
 });
 
 export const comentsreadAllSchema = commentSchemaResponse.array();

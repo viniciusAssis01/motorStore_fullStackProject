@@ -23,7 +23,9 @@ export const readAllCommentsController = async (
 ): Promise<Response> => {
 	const announcement = req.params.announcementId;
 	console.log(announcement);
-	const comments = await S.readAllCommentsService(announcement);
+	const comments: I.TCommentReadAll = await S.readAllCommentsService(
+		announcement
+	);
 	return res.status(200).json(comments);
 };
 
@@ -34,7 +36,11 @@ export const updateCommentController = async (
 	const commentId = req.params.commentId;
 	const userId = res.locals.decoded.sub;
 
-	const updateComment = await S.updateComment(commentId, userId, req.body);
+	const updateComment: I.TCommentResponse = await S.updateComment(
+		commentId,
+		userId,
+		req.body
+	);
 	return res.status(200).json(updateComment);
 };
 

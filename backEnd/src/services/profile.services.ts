@@ -1,7 +1,6 @@
 import * as S from "../schemas";
 import * as I from "../interfaces";
 import { userRepository } from "../repositories";
-import { AppError } from "../error";
 
 export const getAuthenticatedUserService = async (
 	userIdByToken: string

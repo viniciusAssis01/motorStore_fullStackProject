@@ -24,7 +24,13 @@ commentRouter.patch(
 	"/:commentId",
 	M.validateBody(S.updateCommentRequest),
 	M.verifyToken,
+	M.verifyCommentsId,
 	C.updateCommentController
 );
 
-commentRouter.delete("/:commentId", M.verifyToken, C.deleteCommentController);
+commentRouter.delete(
+	"/:commentId",
+	M.verifyToken,
+	M.verifyCommentsId,
+	C.deleteCommentController
+);

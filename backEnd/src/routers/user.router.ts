@@ -13,13 +13,7 @@ userRouter.post(
 	C.createUserController
 );
 
-userRouter.get(
-	"/:userId",
-	M.validateUuid,
-	M.verifyEmailUserExists,
-	M.verifyUserIdExists,
-	C.readUserIdController
-);
+userRouter.get("/:userId", M.verifyUserIdExists, C.readUserIdController);
 
 userRouter.patch(
 	"/:userId/profile",

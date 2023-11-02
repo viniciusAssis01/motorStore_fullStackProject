@@ -25,7 +25,8 @@ export const updateUserProfileController = async (
 ): Promise<Response> => {
 	const userId = res.locals.decoded.sub;
 
-	const updateProfile = await S.updateUserProfileService(userId, req.body);
+	const updateProfile: I.TUserUpdateProfileResponse =
+		await S.updateUserProfileService(userId, req.body);
 	return res.status(200).json(updateProfile);
 };
 export const updateUserAddressController = async (
@@ -34,7 +35,8 @@ export const updateUserAddressController = async (
 ): Promise<Response> => {
 	const userId = res.locals.decoded.sub;
 
-	const updateAddress = await S.updateUserAdressService(userId, req.body);
+	const updateAddress: I.TUserUpdateAddressResponse =
+		await S.updateUserAdressService(userId, req.body);
 	return res.status(200).json(updateAddress);
 };
 
