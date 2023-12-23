@@ -83,7 +83,7 @@ const Product = () => {
 						<div className="h-[355px] sm:h-fit w-full bg-grey-10 rounded p-8 flex items-center justify-center">
 							<img
 								className="max-w-full max-h-full"
-								src="https://carroscomcamanzi.com.br/wp-content/uploads/2020/05/Mazda-RX7-1999-1600-01.jpg"
+								src={announcementData?.coverImage}
 								alt=""
 							/>
 						</div>
