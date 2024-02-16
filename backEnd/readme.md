@@ -947,7 +947,7 @@ Vazio
 
 ---
 
-<p align="center"> created by Alex Lima  - © 2024 - Todos os direitos reservados.<p align="center">
+<p align="center"> created by Vinicius Assis  - © 2024 - Todos os direitos reservados.<p align="center">
  <a href="https://www.linkedin.com/in/viniciusAssis01/" target="_blank"><img src="https://static.licdn.com/sc/h/5bukxbhy9xsil5mb7c2wulfbx" height="25" width="25" alt="Linked" />
 </p></p>
 
